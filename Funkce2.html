@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        function secti(a,b)
+        {
+            return a + b;
+        }
+        function delej()
+        {
+            var a = 1;
+            document.write(a);
+        }
+    </script>
+    <script src="JavaScript.js"></script>
+</head>
+<body>
+    <script>
+        var soucet = secti(10, 20);
+        document.write(soucet);
+        document.write("<br />");
+        document.write(sectiTo(5, 5));
+        document.write("<br />");
+        /*<![CDATA[*/
+        function delej() {
+            var a = 1;
+            document.write(a);
+        }
+        //document.write(a);//nejde
+        delej();
+
+        function totoJde()
+        {
+            var a = 1;
+            document.write(a);
+            {
+                var b = 1;
+            }
+                document.write(b);
+        }
+        totoJde();
+
+        var c = 10;
+        function globalFc()
+        {
+            var c = 20;
+            document.write(c);
+            document.write(this.c);
+        }
+        globalFc()
+        /*]]>*/
+    </script>
+</body>
+</html>
