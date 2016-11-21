@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        /*<![CDATA[*/
+        var datum = new Date();
+        mesic = datum.getMonth() + 1;
+        switch (mesic) {
+            case 2:
+                document.write(28);
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.write(30);
+                break;
+
+            default:
+                document.write(31);
+                break;
+        }
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</body>
+</html>

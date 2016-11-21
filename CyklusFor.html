@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        /*<![CDATA[*/
+        for (var i = 0; i<=10; i++) {
+            document.write(i + "<br />");
+        }
+        document.write("<br />");
+        document.write(i + "<br />");
+        for (var i = 1, j = 10; i <= 10; i++, j--) {
+            document.write("i = " + i + ", j = " + j + "<br />");
+        }
+        document.write("<br />");
+        var soucet = 0, cislo = 0;
+        for (;;) {
+            cislo = parseFloat(prompt("neco", 0));
+            if (isNaN(cislo) || cislo == 0)
+            {
+                break; 
+            }
+            soucet += cislo;
+        }
+        document.write(soucet);
+
+        /*]]>*/
+    </script>
+</body>
+</html>

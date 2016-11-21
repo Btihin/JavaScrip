@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        /*<![CDATA[*/
+        var d = new Date();
+        hodina = d.getHours();
+        //if (hodina == 12)
+        //{
+        //    document.write("Dobré poledne");
+        //}
+        //else if (hodina < 12) {
+        //    document.write("Dobré ráno");
+        //}
+        //else {
+        //    document.write("Dobré odpoledne");
+        //}
+        document.write("<br />");
+        //var hlaska = (hodina < 12) ? "Dobré ránko" : "Dobré odpoledne";
+        var hlaska = (hodina == 12) ? "Dobré poledne" : (hodina < 12) ? "Dobré ránko" : "Dobré odpoledne";
+        document.write(hlaska);
+        /*]]>*/
+    </script>
+</body>
+</html>
