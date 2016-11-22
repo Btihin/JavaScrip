@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        var w1;
+        function openWin()
+        {
+            //w1 = window.open("http://www.gopas.cz", "myWin1","width=300, height=200, top=0, left=0");
+            w1 = window.open("", "myWin1", "width=300, height=200, top=0, left=0");
+            w1.document.write("hello world");
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Otevři okno" onclick="openWin();" />
+    <input type="button" value="zavři okno" onclick="w1.close();" />
+    <a href="http://www.gopas.cz" target="myWin1">Gopas</a>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        //document.write("<br />");
+        var interval = 2000;
+        var counter = 1;
+        var timer;
+
+        function StartTimer()
+        {
+            interval += 1000;
+            alert(counter++ + ". pokus interval je: " + interval);
+            timer = window.setTimeout(StartTimer, interval);
+        }
+        function doIt()
+        {
+            alert("Hello world");
+        }
+        /*]]>*/
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="Start timer" onclick="StartTimer();" />
+        <input type="button" value="Stop timer" onclick="window.clearTimeout(timer);" />
+        <br />
+        <input type="button" value="Start timer Interval" onclick="window.setInterval(doIt, interval);" />
+    </form>
+</body>
+</html>

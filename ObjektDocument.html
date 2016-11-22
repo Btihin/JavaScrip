@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>nějaký titile</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <form>
+        <!--Titulek-->
+        <input type="button" value="Zobrazit titulek" onclick="alert(document.title);" />
+        <input type="button" value="Upravit titulek" onclick="document.title=prompt('Zadej nový titulek', document.title);" />
+        <!--input[type="button"][value="Upravit titulek"][onclick="document.title=prompt('Zadej nový titulek', document.title);"]-->
+        <br />
+        <br />
+        <!--Barva pozadí-->
+        <input type="button" value="Zobrazit barvu pozadí" onclick="alert(document.bgColor);" />
+        <input type="button" value="Upravit barvu pozadí" onclick="document.bgColor = prompt('Zadej barvu pozadí', document.bgColor);" />
+        <br />
+        <br />
+        <!--Document location-->
+        <input type="button" value="Zobrazit adresu dokumentu" onclick="alert(unescape(document.location));" />
+        <input type="button" value="Upravit adresu dokumentu" onclick="document.location = prompt('zadej novou adresu', document.location);" />
+    </form>
+</body>
+</html>

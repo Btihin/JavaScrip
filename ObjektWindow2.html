@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        img {
+            width: 130px;
+            height: 80px;
+        }
+    </style>
+    <script>
+        function showImage(href) {
+            myWin = window.open("",
+                "ImageOkno",
+                "width=400, height=250");
+            var str = "<html>";
+            str += "<head><title>Moje okno</title></head>";
+            str += "<body style='background-color:#d9edf7;'>";
+            str += "<center><img src=\"" + href + "\" /><br />";
+            str += "<form><input type='button' value='Zavři' onclick='window.close();'></form></center></body></html>";
+            myWin.document.write(str);
+            myWin.document.close();
+            myWin.focus();
+
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <a href="images/1_full.jpg" onclick="return false;"><!--href pro zaručení funkčnosti bez javascriptu-->
+                    <img src="images/1_full.jpg" alt="StarTrack1" onclick="showImage(this.src);" />
+                </a>
+            </td>
+            <td>
+                <a href="" onclick="return false;">
+                    <img src="images/2_full.jpg" alt="StarTrack2" onclick="showImage(this.src);" />
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="images/3_full.jpg" style="cursor:pointer;" alt="StarTrack3" onclick="showImage(this.src);" />
+            </td>
+            <td>
+                <a href="images/4.jpg">
+                    <img src="images/4_full.jpg" style="cursor:pointer;" alt="StarTrack4" onclick="showImage(this.src);" />
+                </a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

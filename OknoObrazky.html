@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <style> 
+        img
+        {
+            width:130px;
+            height:80px;
+        }
+    </style>
+    <script>
+        function showImage(href) {
+            myWin = window.open("",
+                "ImageOkno",
+                "width=400, height=250");
+            var str = href;
+
+            myWin.document.write(str);
+            myWin.document.close();
+            myWin.focus();
+
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <a href="images/1.jpg">
+                    <img src="images/1.jpg" alt="StarTrack1" onclick="showImage('images/1.jpg');" />
+                </a>
+            </td>
+            <td><img src="images/2.jpg" alt="StarTrack2" /></td>
+        </tr> 
+        <tr>
+            <td><img src="images/3.jpg" alt="StarTrack3" /></td>
+            <td><img src="images/4.jpg" alt="StarTrack4" /></td>
+        </tr> 
+    </table>
+</body>
+</html>
