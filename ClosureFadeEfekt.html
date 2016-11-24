@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        var fade = function (id) {
+            var dom = document.getElementById(id);
+            var level = 1;
+            var step = function () {
+                var h = level.toString(16);
+                dom.style.backgroundColor = "#FFFF" + h + h;
+                if (level < 15) {
+                    level++;
+                    setTimeout(step, 150);
+                }
+                else {
+                    level = 1;
+                    setTimeout(step, 150);
+                }
+            }
+            setTimeout(step, 1000);
+        }
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body id="htmlBody" onload="fade('htmlBody');">
+    <div id="div1" style="height: 129px; border:solid 2px black" onclick="fade(this.id)"></div>
+    <div id="div2" style="height: 129px; border:solid 2px red" onclick="fade(this.id)"></div>
+    <div id="div3" style="height: 129px; border:solid 2px yellow" onclick="fade(this.id)"></div>
+</body>
+
+</html>

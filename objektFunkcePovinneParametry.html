@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        function sum (a, b)
+        {
+            //var pocetArgumentu;
+            //for (var i = 0; i < arguments.length; i++) {
+
+            //}
+            if (arguments.callee.length != arguments.length) {
+                throw new Error("Neplatný počet parametrů!");
+            }
+            else {
+                return a + b;
+            }
+        }
+        try {
+
+        document.write(sum(10, 20));
+        document.write(sum(10, 20, 30));
+        document.write(sum(10));
+        } catch (e) {
+            console.log("Chyba! - " +e);
+        }
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

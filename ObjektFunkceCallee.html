@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        function faktorial(num) {
+            if (num === 0) {
+                return 1;
+            }
+            return num * faktorial(num - 1);
+        };
+        console.log(faktorial(6));
+
+        var faktorial1 = function (num) {
+            if (num === 0) {
+                return 1;
+            }
+            return num * faktorial1(num - 1);
+        };
+        console.log(faktorial1(6));
+
+        var faktorial2 = function (num) {
+            if (num === 0) {
+                return 1;
+            }
+            return num * arguments.callee(num - 1);
+        }(6);
+        console.log(faktorial2);
+
+        console.log(function (num) {
+            if (num === 0) {
+                return 1;
+            }
+            return num * arguments.callee(num - 1);
+        }(6));
+
+        console.log(function factorial4 (num) {
+            if (num === 0) {
+                return 1;
+            }
+            return num * factorial4(num - 1);
+        }(6));
+        //console.log(faktorial4(7));//chyba . nelze volat faktorial4, protože je vytvořená jen v console.log a ne jako global
+
+
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

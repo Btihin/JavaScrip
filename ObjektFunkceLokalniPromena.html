@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        var format = function (a, b) {
+            var formatString = function (a, b) {
+                return a.substr(0, b);
+            };
+
+            var formatNumber = function (a, b) {
+                return a.toFixed(b);
+            };
+
+            var formatDate = function (a) {
+                return a.toLocaleDateString();
+            };
+
+            switch (typeof a) {
+                case "string":
+                    return formatString(a, b);
+                case "number":
+                    return formatNumber(a, b);
+                default:
+                    if (a.getDate) {
+                        return formatDate(a);
+                    }
+                    return "unsupported";
+            }
+        };
+
+
+        console.log(format(true));
+        console.log(format("ABC", 2));
+        console.log(format(3.1415926, 2));
+        console.log(format(new Date()));
+        console.log(formatDate(new Date()));//tato funkce je lokální ve funkci format... 
+
+        
+            document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

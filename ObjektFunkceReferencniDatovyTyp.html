@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        var show = function (message) {
+            console.log(message);
+        };
+
+        for (var i = 0; i < 10; i++) {
+            show(function (a, b) { return a + " + " + b + " = " + (a + b); }(i, i + 5));
+        }
+
+        var fn = function (p) {
+            p();
+        };
+
+        fn(function () { console.log("Hello World"); });
+        document.write("<br />");
+
+        var fn2 = function (p1) {
+            document.write("<h1>" + p1() + "</h1>");
+        };
+
+        fn2(function () { return "Hello World nadpis"; });
+        document.write("<br />");
+
+        //funkce jako pole
+        var list = [
+            function () { console.log("Zdarec1"); },
+            function () { console.log("Zdarec2"); },
+            function () { console.log("Zdarec3"); }
+        ]
+
+        list[1]();
+
+        for (var i = 0; i < list.length; i++) {
+            list[i]();
+        }
+
+        var fn3 = function (){
+            return function () { console.log("Hello už zase3"); };
+        }
+
+        var fn4 = fn3();
+        fn4();
+
+
+        var show2 = function () {
+            console.log('Nazdáreček hele show 2');
+        };  
+        window.setTimeout(show2, 2000);
+
+        var show3 = function (message) {
+            console.log(message);
+        };
+        window.setTimeout(show3, 2000, "No tak už se snad ani nebudeme zdravit");
+
+        //self-invoked anonymní funkce
+        window.setTimeout(function (message) {
+            return function () { show(message); }
+        }("No zdarec"), 2000);
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

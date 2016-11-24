@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        function format(para)
+        {
+            if (isNaN(para) && arguments.length === 2) {
+                document.write("Je to string: " + para.substring(0, arguments[1]));
+            }
+            else if (!isNaN(para) && arguments.length === 2) {
+                document.write("Je to číslo: " + para.toFixed(arguments[1]));//funkce na oříznutí čísla...->hodit do stringu, oříznou a hodit do intu...
+            }
+            else if (para.getFullYear) {
+                var datum = para.getDate() + "." + (para.getMonth() + 1) + "." + para.getFullYear();
+                document.write("Je to datum: " + datum);
+            }
+            else {
+                throw new Error("Chyba");
+            }
+
+        }
+        function format1(value, length)
+        {
+            switch (typeof value) {
+                case "string":
+                    return value.substring(0, length);
+                    break;
+                case "number":
+                    return value.toFixed(lenght);
+                case "object":
+                    //if (value.getFullYear) {
+                    //if (value.constructor == Date) {
+                    if (value instanceof Date) {
+                        //vrat datum zformátovaný           
+                    }
+                default:
+
+            }
+        }
+        format("abc", 2);
+        document.write("<br />");
+        format(3.145555, 2);
+        document.write("<br />");
+        document.write("<br />");
+        format(date = new Date());
+
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

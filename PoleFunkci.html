@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        var poleFunkci = [];
+        for (var i = 1; i <= 100; i++) {
+            poleFunkci[i] = function (i) {
+                //var is = i;
+                return function () {
+                    return "Hello World " + i;
+                };
+            }(i);
+        }
+        
+        for (var i = 1; i < poleFunkci.length; i++) {
+            console.log(poleFunkci[i]());
+
+        }
+        console.log(poleFunkci[10]());
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

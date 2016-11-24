@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        function poplatek()
+        {
+            var castka;
+            if (arguments.length > 0 && arguments.length < 3) {
+                if (arguments.length === 1) {
+                    return arguments[0] * 0.05;
+                }
+                else {
+                    return arguments[0] * arguments[1] / 100;
+                }
+
+                
+            }
+            else {
+                throw new Error("Neplatný počet parametrů!");
+            }
+        }
+        console.log(poplatek(1000, 3));
+        console.log(poplatek(1000));
+        console.log(poplatek(1000, 3, "pivo"));
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

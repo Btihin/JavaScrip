@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        //var a = "globalní";
+        //var fn = function () {
+        //    var a = "vnitřní";
+        //    console.log(a);
+        //};
+        //fn();
+
+        //var a = "globalní";
+        //var fn = function () {
+        //    var a = "vnitřní";
+        //    var fnVnitrni = function () {
+        //        var a = "vnořená hodim to na GIT";
+        //        console.log(a);
+        //    }
+        //    fnVnitrni();
+        //};
+        //fn();
+
+        //var a = "globalní";
+        //var fn = function () {
+        //    var a = "vnitřní";
+        //    var fnVnitrni = function () {
+        //        var a = "vnořená hodim to na GIT";
+        //        console.log(a);
+        //        console.log(window.a);
+
+        //    }
+        //    fnVnitrni();
+        //};
+        //fn();
+
+        var fn = function () {
+            var a = "vnitřní";
+            var fn = function () {
+                return a;
+            };
+            return fn;
+        }();
+        console.log(fn());
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>
