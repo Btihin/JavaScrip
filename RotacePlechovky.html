@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        var poleObrazku = new Array(15);
+        for (var i = 0; i < poleObrazku.length; i++) {
+            poleObrazku[i] = new Image();
+            poleObrazku[i].src = "7Up/" + i + ".gif";
+        }
+
+        //for (var i = 0; i < poleObrazku.length; i++) {
+        //    document.write("<img src='" + poleObrazku[i] + "'/> <br />");
+        //}
+
+        var interval = 50;
+        var cislo = 0;
+        var timer;
+
+        function RoztocTo()
+        {
+            document.images["plechovka"].src = poleObrazku[cislo].src;//name do uvozovek ""
+            //document.write(cislo);//test
+            timer = window.setTimeout(RoztocTo, interval);
+            cislo = (cislo + 1) % poleObrazku.length; //musí být závorka
+            //0+1 % 15 = 
+            //if (cislo != 14)
+            //{
+            //    cislo++;
+            //}
+            //else
+            //{
+            //    cislo = 0;
+            //}
+
+        }
+
+        function Stuj(timer)
+        {
+            window.clearTimeout(timer);
+        }
+    </script>
+</head>
+<body>
+    <img name="plechovka" src="7Up/0.gif" />
+    <br />
+    <input type="button" value="Start" onclick="RoztocTo();" />
+    <input type="button" value="Stop" onclick="Stuj(timer)"/>
+</body>
+</html>

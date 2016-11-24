@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        var today = new Date();
+        document.write(today);
+        document.write("<br />");
+        var someday = new Date(1403699851064);
+        document.write(someday);
+        document.write("<br />");
+        var somedayB = new Date(2014, 5, 25);
+        document.write(somedayB);
+        document.write("<br />");
+        var tomorrow = new Date(today.getTime() + 1000 * 60 * 60 * 24);
+        document.write(tomorrow);
+        document.write("<br />");
+
+        function getDateString(date)
+        {
+            return getWeekdayName(date) + " " + date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear();
+        }
+        document.write(getDateString(today));
+        document.write("<br />");
+        function getWeekdayName(date)
+        {
+            var days = new Array("Neděle", "Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota");
+            return days[date.getDay()];
+        }
+
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

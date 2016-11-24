@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        var citat = new Array();
+        citat[0] = "Jak se do lesa volá, tak se z lesa ozývá";
+        citat[1] = "Do hospody s umytýma nohama";
+        citat[2] = "Lepší pivo v žaludku, nežli voda na plicích";
+        
+        function getCitat()
+        {
+            var i = parseInt(Math.random() * citat.length);
+            return citat[i];
+        }
+        document.write("<br />");
+        /*]]>*/
+    </script>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        document.write(getCitat());
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

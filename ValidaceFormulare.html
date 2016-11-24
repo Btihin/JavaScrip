@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        .chyba {
+            border: 1px #7d1616 solid;
+            background-color: #f2a6a6;
+        }
+
+        .normal {
+            border: 1px #000000 solid;
+            background-color: #ffffff;
+        }
+    </style>
+    <script>
+        /*<![CDATA[*/
+        function validateFormData() {
+            if (document.forms["objednavka"].elements["jmeno"].value == "") {
+                alert("Nebylo zadáno jméno.");
+                //document.forms["objednavka"].elements["jmeno"].class = "chyba";
+                document.forms["objednavka"].elements["jmeno"].focus();
+                return false;
+            }
+            //else {
+            //    document.forms["objednavka"].elements["jmeno"].attribute["class"] = "normal";
+            //}
+            if (document.forms["objednavka"].elements["prijmeni"].value == "") {
+                alert("Nebylo zadáno příjmení.");
+                //document.forms["objednavka"].elements["prijmeni"].class = "chyba";
+                document.forms["objednavka"].elements["prijmeni"].focus();
+                return false;
+            }
+            //else {
+            //    document.forms["objednavka"].elements["prijmeni"].attribute["class"] = "normal";
+            //}
+            if (document.forms["objednavka"].elements["email"].value == "" && document.forms["objednavka"].elements["email"].value.indexOf("@") == -1) {
+                alert("Nebyl zadán email.");
+                //document.forms["objednavka"].elements["email"].class = "chyba";
+                document.forms["objednavka"].elements["email"].focus();
+                return false;
+            }
+            //else {
+            //    document.forms["objednavka"].elements["email"].attribute["class"] = "normal";
+            //}
+            if (document.forms["objednavka"].elements["dni"].value == "") {
+                alert("Nebyl zadán Počet dní.");
+                document.forms["objednavka"].elements["dni"].focus();
+                return false;
+            }
+
+            if (document.forms["objednavka"].elements["osob"].value == "") {
+                alert("Nebyl zadán Počet dní.");
+                document.forms["objednavka"].elements["osob"].focus();
+                return false;
+            }
+            //else {
+            //    document.forms["objednavka"].elements["jmeno"].attribute["class"] = "normal";
+            //}
+            return confirm("Opravdu odeslat?");
+        }
+
+        function nactiCenu()
+        {
+            var dny = document.forms["objednavka"].elements["dni"];
+            var osoby = document.forms["objednavka"].elements["osob"];
+            if (dny.value != "" && osoby.value != "")
+            {
+                if (!isNaN(parseInt(dny.value)) && !isNaN(parseInt(osoby.value)))
+                {
+                    document.forms["objednavka"].elements["cena"].value = (parseInt(dny.value)) * parseInt(osoby.value);
+                }
+                else {
+                    var celkem = parseInt(dny.value) + parseInt(osoby.value);
+                    alert("vyplňte čísla!" + dny.value + " + " + osoby.value + " = " + celkem);
+                }
+            }
+        }
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+
+                <form name="objednavka" action="someServerSideCode.aspx" onsubmit="return (document.forms['objednavka'].elements['kontrola'].checked) ? validateFormData() : confirm('Oppravdu odeslat?');">
+                    <div>
+                        <div class="form-group">
+                            <label for="jmeno">
+                                Jméno:
+                            </label>
+                            <input type="text" id="jmeno" name="jmeno" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="prijmeni">
+                                <label for="prijmeni">Příjmení:</label>
+                            </label>
+                            <input type="text" name="prijmeni" id="prijmeni" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email:
+                            </label>
+                            <input type="text" name="email" id="email" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="dni">
+                                Počet dní:
+                            </label>
+                            <input type="text" name="dni" id="dni" class="form-control" onblur="nactiCenu();" />
+                        </div>
+                        <div class="form-group">
+                            <label for="osob">
+                                Počet osob:
+                            </label>
+                            <input type="text" name="osob" id="osob" class="form-control" onblur="nactiCenu();" />
+                        </div>
+                        <div class="form-group">
+                            <label for="chata">
+                                Horská chata:
+                            </label>
+                            <select type="text" name="chata" id="chata" class="form-control">
+                                <option value="1">Penzion</option>
+                                <option value="2">Chata</option>
+                                <option value="3">Hotel</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cena">
+                                Cena:
+                            </label>
+                            <input type="text" name="cena" id="cena" readonly="readonly" disabled="disabled" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="kontrola">
+                                Kontrola:
+                            </label>
+                            <input type="checkbox" name="kontrola" id="kontrola" checked />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Odeslat" class="btn btn-primary" />
+                            <input type="reset" value="Smazat" class="btn btn-default" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        var list = new Array();
+        list[0] = "A";
+        list[1] = "B";
+        list[2] = "C";
+        list[3] = "D";
+        list[40] = "E";
+        document.write(list[1]);
+        document.write("A:<br />");
+        for (var i = 0; i < list.length; i++) {
+            document.write(i + ". " + list[i] + "<br />");
+        }
+        delete (list[40]);
+        document.write("<br />");
+        document.write("Po akci:<br />");
+
+        list.splice(4, list.length);
+
+        for (var i = 0; i < list.length; i++) {
+            document.write(i + ". " + list[i] + "<br />");
+        }
+
+        document.write("<br />");
+        document.write("B:<br />");
+        var listB = new Array("A", "B", "C", "D");
+        
+        for (var i = 0; i < listB.length; i++) {
+            document.write(i + ". " + listB[i] + "<br />");
+        }
+
+        document.write("<br />");
+        document.write("C:<br />");
+        var listC = ["A", "B", "C", "D"];
+       
+        for (var i = 0; i < listC.length; i++) {
+            document.write(i + ". " + listC[i] + "<br />");
+        }
+        
+        document.write("<br />");
+        document.write("D:<br />");
+        var listD = "A,B,C,D".split(",");
+
+        for (var i = 0; i < listD.length; i++) {
+            document.write(i + ". " + listD[i] + "<br />");
+        }
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <!--<link href="css/bootstrap.css" rel="stylesheet" />-->
+    <!--<link href="css/bootstrap-theme.css" rel="stylesheet" />-->
+</head>
+<body>
+    <script>
+        /*<![CDATA[*/
+        //document.write("<br />");
+        function zapisRadek(nazev, hodnota)
+        {
+            document.write("<tr><td>"
+                + nazev
+                + "</td><td>"
+                + hodnota
+                + "</td></tr>");
+        }
+        if (navigator.appName == "Microsoft Internet Explorer")
+        {
+            document.bgColor = "#6666ff";
+        }
+        if (navigator.appName == "Netscape")
+        {
+            document.bgColor = "#ff0000";
+        }
+        /*]]>*/
+    </script>
+    <table class="table-striped">
+        <script>
+            zapisRadek("appName: ", window.navigator.appName);
+            zapisRadek("appVersion: ", window.navigator.appVersion);
+            zapisRadek("appCodeName: ", window.navigator.appCodeName);
+            zapisRadek("userAgent: ", window.navigator.userAgent);
+            zapisRadek("platform: ", window.navigator.platform);
+        </script>
+    </table>
+</body>
+</html>

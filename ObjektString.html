@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script>
+        var refresh = 50;
+        var text = " --- - jdu domu<-";
+        var delka = text.length;
+        var zacatek = 0;
+        function nacti() {
+
+
+        }
+        function rotuj() {
+            var input = document.getElementById("text1");
+            input.value = text;
+            var oriznutyOJeden = text.substring(1, text.length);
+            var prvniznak = text[0];
+            text = oriznutyOJeden + prvniznak;
+            //0123456789
+            //123456789 + 0
+            //234567890 + 1
+            window.setTimeout(rotuj, refresh);
+        }
+    </script>
+</head>
+<body onload="rotuj();">
+    <script>
+        /*<![CDATA[*/
+        var email = new String("mickey.mouse@disneyland.com");
+
+        document.write(email + "<br />");
+        document.write(email.toUpperCase() + "<br />");
+        document.write(email.toLocaleLowerCase() + "<br />");
+        document.write(email.bold() + "<br />");
+        document.write(email.italics() + "<br />");
+        document.write(email.bold().italics() + "<br />");
+        document.write(email.bold().italics().toUpperCase() + "<br />");
+        document.write("<br />");
+        document.write(email.length + "<br />");
+        document.write(email.indexOf("m") + "<br />");
+        document.write(email.indexOf("m", 2) + "<br />");
+        document.write(email.indexOf("mo") + "<br />");
+        document.write(email.lastIndexOf("m") + "<br />");
+        document.write(email.substring(3, 5) + "<br />");
+        document.write(email.substring(3) + "<br />");
+        document.write(email.charAt(3) + "<br />");
+
+        document.write("<br />");
+        document.write("<br />");
+
+        document.write("Jméno: " + email.substring(0, email.indexOf(".")) + "<br />");
+        document.write("Příjmení: " + email.substring(email.indexOf(".") + 1, email.indexOf("@")) + "<br />");
+        document.write("Název serveru: " + email.substring(email.indexOf("@") + 1, email.length) + "<br />");
+        document.write("Název serveru: " + email.substring(email.indexOf("@") + 1) + "<br />");
+
+
+        /*]]>*/
+    </script>
+    <p id="para"></p>
+    <input type="text" id="text1" value="" />
+</body>
+</html>

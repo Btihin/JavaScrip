@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        function writeCookie(name, value, daysToExpire)
+        {
+            var strCookie = name + "=" + escape(value);
+            if (daysToExpire)
+            {
+                var date = new Date();
+                date.setTime(date.getTime() + daysToExpire * 24 * 60 * 60 * 1000);
+                strCookie += "; expires=" + date.toGMTString();
+            }
+            document.cookie = strCookie;
+        }
+
+        function parseCookies()
+        {
+            var cookieList = document.cookie.split("; ");//pole jednotlivých cookie
+            var cookieArray = new Array();
+            var name;
+            for (var i = 0; i < cookieList.length; i++)//A a B
+            {
+                name = cookieList[i].split("=");//jednotlivé cookie rozparsujem dle "="
+                cookieArray[unescape(name[0])] = unescape(name[1]);//do array s hodnotou před rovnáse array[A] doplní hodnotu za rovnáse = "1"
+            }
+            return cookieArray;
+        }
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="Write cookie A" onclick="writeCookie('A', 1);" />
+        <input type="button" value="Write cookie B" onclick="writeCookie('B', 2, 5)" />
+        <input type="button" value="Show cookie" onclick="document.getElementById('par1').innerHTML = document.cookie;" />
+        <input type="button" value="Delete cookie B" onclick="writeCookie('B', 2, -365);" />
+        <br />
+        <br />
+        <input type="text" value="" id="cookieName" />
+        <input type="button" value="Show cookie value by name" onclick="var cookies = parseCookies(); alert(cookies[document.getElementById('cookieName').value])" />
+        <br />
+        <br />
+        <input type="button" value="Write cookie C" onclick="writeCookie('C', '1,2,3', 5);" />
+        <input type="button" value="Show cookie C" onclick="var cookie = parseCookies(); alert(cookie['C'].split(',')[2]);" />
+    </form>
+    <p id="par1"></p>
+</body>
+</html>

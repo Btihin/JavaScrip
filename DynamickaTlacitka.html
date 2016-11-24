@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <script>
+        /*<![CDATA[*/
+        //
+        //Nejlépe nejdříve nacachovat obrázky pomocí
+        //var img = new Image();
+        //img.src = "images3/First_button.png";
+        //document.write("<br />");
+        function ToHoverButton(name) {
+            document.images[name].src = "images3/" + name + "_hover.png";
+            document.title = name + ":hover";
+        }
+
+        function ToActionButton(name) {
+            document.images[name].src = "images3/" + name + "_action.png";
+            document.title = name + ":action";
+        }
+
+        function ToNormalButton(name) {
+            document.images[name].src = "images3/" + name + "_button.png";
+            document.title = name + ":leaved";
+        }
+        /*]]>*/
+    </script>
+</head>
+<body>
+    <img src="images3/First_button.png" alt="" name="First" onmouseover="ToHoverButton(this.name);" onmousedown="ToActionButton(this.name)" onmouseup="ToHoverButton(this.name)" onmouseout="ToNormalButton(this.name)" />
+    <img src="images3/Rewind_button.png" alt="" name="Rewind"  onmouseover="ToHoverButton(this.name);" onmousedown="ToActionButton(this.name)" onmouseup="ToHoverButton(this.name)" onmouseout="ToNormalButton(this.name)" />
+    <img src="images3/Play_button.png" alt="" name="Play" onmouseover="ToHoverButton(this.name);" onmousedown="ToActionButton(this.name)" onmouseup="ToHoverButton(this.name)" onmouseout="ToNormalButton(this.name)" />
+    <img src="images3/Stop_button.png" alt="" name="Stop" onmouseover="ToHoverButton(this.name);" onmousedown="ToActionButton(this.name)" onmouseup="ToHoverButton(this.name)" onmouseout="ToNormalButton(this.name)" />
+    <img src="images3/FastForward_button.png" alt="" name="FastForward" onmouseover="ToHoverButton(this.name);" onmousedown="ToActionButton(this.name)" onmouseup="ToHoverButton(this.name)" onmouseout="ToNormalButton(this.name)" />
+    <img src="images3/Last_button.png" alt="" name="Last" onmouseover="ToHoverButton(this.name);" onmousedown="ToActionButton(this.name)" onmouseup="ToHoverButton(this.name)" onmouseout="ToNormalButton(this.name)" />
+</body>
+</html>
