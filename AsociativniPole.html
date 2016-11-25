@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        var list = [];
+        list["Praha1"] = "110 00";
+        list["Praha2"] = "120 00";
+        list["Praha3"] = "130 00";
+        console.log(list.length);
+        document.write(list["Praha2"]);
+        document.write("<br />");
+        document.write("<br />");
+        for (var key in list)
+        {
+            document.write(key + "<br />");
+        }
+
+        document.write("<br />");
+
+        for (var key in list) {
+            document.write(key + " = " + list[key] + "<br />");
+        }
+        
+        document.write("<br />");
+
+        var size = 0;
+        for (var key in list) {
+            size++;
+        }
+        document.write(size);
+        document.write("<br />");
+
+        delete list["Praha2"];
+
+        var size2 = 0;
+        for (var key in list) {
+            size2++;
+        }
+        document.write(size2);
+        document.write("<br />");
+
+        console.log(list["Praha2"]);
+        console.log(list["Praha1"]);
+        console.log(list.Praha2);
+        console.log(list.Praha1);
+        console["log"](list["Praha2"]);
+        console["log"](list["Praha1"]);
+        document["write"]("Hello World");
+        for (var key in document) {
+            console.log(key + " = " + document[key]);
+        }
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

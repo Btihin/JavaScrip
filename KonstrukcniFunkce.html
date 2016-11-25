@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        //var Person = function () {
+        //    this.firstName = "Homer";
+        //    this.lastName = "Simpson";
+        //};
+        //Person();
+        //window.Person();
+        //console.log(firstName);
+
+        //var p1 = new Person();
+        //console.log(p1 instanceof Person);
+
+        //první varianta správnější :-)
+        //var Person = function person() {
+        //    if (!(this instanceof person)) {
+        //        return new person();
+        //    }
+        //    this.firstName = "Homer";
+        //    this.lastName = "Simpson";
+        //};
+        //var p2 = Person();
+
+        var Person = function () {
+            var nextId= 1;
+            return function (firstName, lastName) {
+                this.id = nextId++;
+                this.firstName = firstName || "";
+                this.lastName = lastName || "";
+            };
+        }
+
+        var p3 = new Person("Homer", "Simpson");
+        console.log(p3.firstName);
+
+        var p4 = new Person();
+        console.log(p4.lastName);
+
+        var p5 = new Person();
+        console.log(p4.id);
+        console.log(p5.id);
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

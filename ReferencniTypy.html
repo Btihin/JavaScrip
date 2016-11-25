@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        var a = 1;
+        var b = a;
+        b++;
+        console.log(a);//hodnota se nemění, b nastavím na hodnotu "a" a k b přičtu jedna. "a" je tedy 1 a "b" je 2;
+
+        var c = [1, 2, 3];
+        var d = c;
+        d[0]++;
+        console.log(c[0]);//hodnota se nemění, b nastavím na hodnotu "a" a k b přičtu jedna. "a" je tedy 1 a "b" je 2;
+
+        var e = 1;
+        var fn = function (f) {
+            f++;
+            console.log("f = " + f);
+        }
+        fn(a);
+        console.log("a = " + a);//hodnota se nemění, b nastavím na hodnotu "a" a k b přičtu jedna. "a" je tedy 1 a "b" je 2;
+
+        var g = [1];
+        var fn1 = function (h) {
+            h[0]++;
+            console.log("h[0] = " + h[0]);
+        }
+        fn1(g);
+        console.log("g[0] = " + g[0]);// změnilo se ! array je referenční typ
+
+        var xmas = new Date(2011, 11, 24);
+        var temp = xmas;
+        temp.setDate(25);
+        console.log(xmas.getDate());//změnilo se reference
+
+        console.log((new String("foo")) == (new String("foo"))); //objekty mají každý jinou referenci - neporovnává se hodnota ale reference
+
+        console.log((new String("foo")).valueOf() == (new String("foo")).valueOf()); //porovnává se hodnota objektů
+
+        console.log('foo' == 'foo');
+
+        console.log((new Number(1)) == (new Number(1)));
+        console.log((new Number(1)).valueOf() == (new Number(1)).valueOf());
+        console.log(1 == 1);
+        console.log((new Date(2014, 0, 1)) == (new Date(2014, 0, 1)));
+        console.log((new Date(2014, 0, 1)).valueOf() == (new Date(2014, 0, 1)).valueOf());
+        console.log();
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

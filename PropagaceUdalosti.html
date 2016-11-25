@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <table id="table1">
+        <tr>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+        </tr>
+        <tr>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+        </tr>
+        <tr>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+        </tr>
+        <tr>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+        </tr>
+        <tr>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+        </tr>
+        <tr>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+        </tr>
+        <tr>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+        </tr>
+        <tr>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+        </tr>
+        <tr>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+        </tr>
+        <tr>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+            <td>ABC</td>
+        </tr>
+    </table>
+    <script>
+        document.getElementById("table1").onclick = function (e) {
+            e.target = e.target || event; // event pro IE < 6
+            //console.log(this.tagName);
+            //console.log(e.target.tagName);
+            if (e.target.style.backgroundColor == "yellow") {
+                e.target.style.backgroundColor = "red";
+            }
+            else {
+                e.target.style.backgroundColor = "yellow";
+            }
+            console.log(e.target.tagName);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+
+        var Person = function (firstName, lastName) {
+                this.firstName = firstName || "";
+                this.lastName = lastName || "";
+                //this.toString = function () {
+                //    return this.firstName + " " + this.lastName;
+                //}
+        };
+        //console.log(p1.constructor === Person);
+        //console.log(p1.constructor.prototype === Person.prototype);
+        //console.log(p1.__proto__ === Person.prototype);//ECMA6
+        //console.log(Object.getPrototypeOf(p1) === Person.prototype);//ECMA5
+
+        p1.canEat = true;
+        Person.prototype.canDrink = true;
+
+
+        //Person.prototype.toString = function () {
+        //    return this.firstName + " " + this.lastName;
+        //}
+
+        Person.prototype.toString = {
+            toString: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        var p1 = new Person("Homer", "Simpson");
+        var p2 = new Person("Bart", "Simpson");
+        console.log(p1.toString() == p2.toString());
+        p1.canSpeak = true;
+        console.log(p1.canSpeak); //true
+        console.log(p1.canDrink); //true
+
+
+        for (var i in Object) {
+            console.log(i + ": " + Object[i]);
+        }
+        document.write("<br />");
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

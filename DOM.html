@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html><head><title>Můj titulak</title>
+	<meta charset="utf-8" />
+</head>
+<body><p>Hello</p>
+    <p>Helldjkfaslůkdjflůaskjflůdksajo</p>
+    <p id="para1">start</p>
+    <p id="para2">stop</p>
+    <script>
+        var el = document.documentElement;
+        console.log(el.tagName);//html
+        el = el.firstChild;
+        console.log(el.tagName);//head
+        el = el.firstChild;
+        console.log(el.tagName);//title
+        el = el.parentNode.parentNode.lastChild;
+        console.log(el.tagName);//body
+        el = el.firstChild;
+        console.log(el.tagName);//p
+        console.log(el.firstChild.nodeValue);//hello
+
+        console.log(document.querySelector("p:first-child").firstChild.nodeValue);
+
+        var Wrap = function (dom) {
+            this.dom = dom;
+            this.timerId = undefined;
+        }
+        Wrap.prototype = {
+            start: function go() {
+                this.dom.style.backgroundColor = (this.dom.style.backgroundColor == "") ? "yellow" : "";
+                this.timerId = window.setTimeout(go.bind(this), 2000);
+            },
+            stop: function () {
+                window.clearTimeout(this.timerId);
+            },
+        };
+
+        var o1 = new Wrap(document.querySelector("p:first-child"));
+        o1.start();
+    </script>
+</body>
+</html>

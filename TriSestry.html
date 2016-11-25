@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        //(function () {
+            var kostka1 = {
+                hodnota: 6,
+                hazej: function () {
+                    this.hodnota = parseInt(Math.random() * 6) + 1;
+                },
+            };
+            var kostka2 = {
+                hodnota: 6,
+                hazej: function () {
+                    this.hodnota = parseInt(Math.random() * 6) + 1;
+                },
+            };
+            var kostka3 = {
+                hodnota: 6,
+                hazej: function () {
+                    this.hodnota = parseInt(Math.random() * 6) + 1;
+                },
+            };
+
+            function myfunction() {
+                kostka1.hazej();
+                kostka2.hazej();
+                kostka3.hazej();
+                console.log(kostka1.hodnota);
+                console.log(kostka2.hodnota);
+                console.log(kostka3.hodnota);
+                //console.log("<br />");
+                window.setTimeout(myfunction, 1000);
+            }
+            myfunction();
+        //});
+
+
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

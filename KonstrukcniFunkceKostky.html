@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        (function () {
+
+            var Kostka = function (hodnota) {
+                this.hodnota = hodnota || 6;
+                this.hazej = function () {
+                    this.hodnota = parseInt(Math.random() * 6) + 1;
+                };
+                this.hazej();
+            };
+
+            var Hra = function (pocetKostek) {
+                this.kostky = [];
+                for (var i = 0; i < pocetKostek; i++) {
+                    this.kostky[i] = new Kostka();
+                }
+
+                //this.kostka1 = new Kostka(6);
+                //this.kostka2 = new Kostka(6);
+                //this.kostka3 = new Kostka();
+                //this.id = id;
+                this.start = function () {
+                    for (var i = 0; i < this.kostky.length; i++) {
+                        this.kostky[i].hazej();
+                        console.log(this.kostky[i].hodnota);
+                    }
+                    //this.kostka1.hazej();
+                    //this.kostka2.hazej();
+                    //this.kostka3.hazej();
+                    //document.getElementById(this.id).value =  "Hra: " + this.kostka1.hodnota + " - " + this.kostka2.hodnota + " - " + this.kostka3.hodnota;
+                    //console.log("Hra: " + this.kostka1.hodnota + " - " + this.kostka2.hodnota + " - " + this.kostka3.hodnota);
+                };
+            };
+        window.gopas = { games: { hracikostka: new Hra(3) } }; // do objektu window přidáme novou vlastnost "gopas" a do ní uložíme vlastnost games která vyvolá hru 
+        })();
+        //Hra();
+
+
+
+        gopas.games.hracikostka.start();
+        gopas.games.kostky.start();
+        gopas.games.kostky.start();
+        document.write("<br />");
+        /*]]>*/
+    </script>
+    <!--<script>
+        (function () {
+            var Kostka = function () {
+                this.hodnota = 6;
+                this.hazej = function () {
+                    this.hodnota = parseInt(Math.random() * 6) + 1;
+                };
+                this.hazej();
+            };
+
+            var Hra = function (pocetKostek) {
+                this.kostky = [];
+                for (var i = 0; i < pocetKostek; i++) {
+                    this.kostky[i] = new Kostka();
+                }
+                this.start = function () {
+                    for (var i = 0; i < this.kostky.length; i++) {
+                        this.kostky[i].hazej();
+                        console.log(this.kostky[i].hodnota);
+                    }
+                };
+            };
+
+            window.gopas = { games: { kostky3: new Hra(3), kostky6: new Hra(6) } };
+        })();
+    </script>-->
+</head>
+<body>
+    <input type="text" value="" id="hod" />
+    <input type="button" value="Hraj" onclick="Hra(hod);" />
+</body>
+</html>

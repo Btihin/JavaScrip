@@ -1,0 +1,53 @@
+﻿a<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*<![CDATA[*/
+        var homer = new Object();
+        homer["firsName"] = "Homer";
+        homer.lastName = "Simpson";//stejný zápis
+        //delete homer["lastName"];
+        homer["toString"] = function () {
+            return this.firsName + " " + this.lastName;
+        }
+
+        console.log(homer.toString());
+        //console.log(homer.["toString"]);
+        //for (var key in homer) {
+        //    console.log(key + ": " + homer[key]);
+        //}
+        //document.write("<br />");
+
+        //var kostka = new Object();
+        //kostka["hodnota"] = 6;
+        //kostka["hazej"] = function () {
+        //    this.hodnota = parseInt(Math.random()*6)+1;
+        //}
+        ////for (var i in kostka) {
+        ////    console.log(key + ": " + kostra[key]);
+        ////}
+        ////for (var i = 0; i < kostka.hodnota.lenght; i++) {
+        ////    console.log(kostka.hodnota[i])
+        ////}
+        //kostka.hazej();
+        
+        //console.log(kostka.hodnota);
+
+        var marge = {
+            firsName: "Marge",
+            lastName: "Simpson",
+            toString: function () {
+                return this.firsName + " " + this.lastName;
+            },
+        };
+
+        console.log(marge.toString());
+        /*]]>*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>
